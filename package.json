@@ -1,0 +1,36 @@
+{
+    "name": "language-sped",
+    "displayName": "language-sped",
+    "description": "Sintaxe Sped Comunicação RFB(Arquivo SPED)",
+    "version": "0.1.0",
+    "engines": {
+        "vscode": "^1.41.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "sped",
+            "aliases": ["Sped", "sped"],
+            "extensions": [".txt"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "sped",
+            "scopeName": "source.txt",
+            "path": "./syntaxes/sped.tmLanguage.json"
+        }]
+    },
+    "keywords": [
+        "rfb",
+        "sped"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/redvulps/language-sped",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/redvulps/language-sped.git"
+    },
+    "bugs": "https://github.com/redvulps/language-sped/issues"
+}
