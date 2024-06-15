@@ -2,8 +2,8 @@
     "name": "language-sped",
     "publisher": "redvulps",
     "displayName": "language-sped",
-    "description": "Sintaxe Sped Comunicação RFB(Arquivo SPED)",
-    "version": "0.1.0",
+    "description": "Sintaxe Sped Comunicação RFB (Arquivo SPED)",
+    "version": "0.2.0",
     "engines": {
         "vscode": "^1.41.0"
     },
