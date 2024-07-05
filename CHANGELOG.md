@@ -10,3 +10,7 @@
 - Adicionado highlight de chave de nota fiscal
 - Adicionado highlight de CFOP
 - Atualizada lista de CFOPs
+
+## [0.2.1]
+
+- Melhorado início e fim dos matches
