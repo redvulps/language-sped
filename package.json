@@ -3,7 +3,7 @@
     "publisher": "redvulps",
     "displayName": "language-sped",
     "description": "Sintaxe Sped Comunicação RFB (Arquivo SPED)",
-    "version": "0.2.1",
+    "version": "0.3.0",
     "engines": {
         "vscode": "^1.41.0"
     },
@@ -19,7 +19,7 @@
         }],
         "grammars": [{
             "language": "sped",
-            "scopeName": "source.txt",
+            "scopeName": "source.sped",
             "path": "./syntaxes/sped.tmLanguage.json"
         }]
     },

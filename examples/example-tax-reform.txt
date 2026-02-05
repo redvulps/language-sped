@@ -1,0 +1,183 @@
+*Arquivo SPED - Reforma Tributária Brasileira*
+*Suporte a IBS, CBS e Imposto Seletivo (IS)*
+*Baseado na Nota Técnica 2025.002 (NF-e/NFC-e)*
+*Vigência obrigatória: Janeiro 2026*
+*Status: Campos opcionais em 2025, obrigatórios a partir de 01/01/2026*
+
+|0000|014|0|01012026|31012026|EMPRESA REFORMA TRIBUTARIA LTDA|11223344000155||SP|1122334400|5511999999999|||||
+|0001|0|
+|0005|EMPRESA REFORMA TRIBUTARIA LTDA|11223344000155|SP|112233|AV REFORMA|2026||CENTRO|01000000|SAO PAULO|1199999999||reforma@empresa.com.br|
+|0100|CONTADOR NOVO REGIME|11122233344|CRC112233SP|contador@reforma.com.br|1188888888|
+
+*==============================================================================*
+*BLOCO C - NF-e COM IBS, CBS E IMPOSTO SELETIVO                               *
+*Nota Técnica 2025.002 - Novos campos e grupos de tributação                  *
+*==============================================================================*
+
+*NF-e com IBS e CBS (produtos não sujeitos ao Imposto Seletivo)*
+|C100|0|1|000001|55|00|1|11223344000155|55667788000199|CLIENTE TESTE IBS CBS|RJ||000001|55|000000001|15012026|15012026|10000,00|0|10000,00|0|IBS_CBS|60|0|0|0|0|10000,00|0|0|0|0|0|0|0|33260155667788000199550000000010000000018|
+|C110|000|3301|REFORMA|202601|VENDA COM NOVOS TRIBUTOS IBS/CBS|
+
+*Item com IBS - Imposto sobre Bens e Serviços*
+*IBS substitui ICMS e ISS - Alíquota teste 2026: 0,1%*
+|C170|001|100001|PRODUTO PADRAO COM IBS|UN|100,00|100,00|0|5101|000|10000,00|0|0|0|0|0|
+*Campos IBS (Nota Técnica 2025.002):*
+*- Base de cálculo IBS: 10000,00*
+*- Alíquota IBS: 0,10% (alíquota teste 2026)*
+*- Valor IBS: 10,00*
+*IBS_BC:10000.00|IBS_ALIQ:0.10|IBS_VALOR:10.00|IBS_UF:RJ*
+
+*Item com CBS - Contribuição sobre Bens e Serviços*
+*CBS substitui PIS e COFINS - Alíquota teste 2026: 0,9%*
+|C170|002|100002|PRODUTO PADRAO COM CBS|UN|50,00|200,00|0|5101|000|10000,00|0|0|0|0|0|
+*Campos CBS (Nota Técnica 2025.002):*
+*- Base de cálculo CBS: 10000,00*
+*- Alíquota CBS: 0,90% (alíquota teste 2026)*
+*- Valor CBS: 90,00*
+*CBS_BC:10000.00|CBS_ALIQ:0.90|CBS_VALOR:90.00*
+
+|C190|000|5101|0,00|0,00|0,00|0,00|0,00|0,00|
+*Totalizador IBS/CBS por CST:*
+*IBS_TOTAL:10.00|CBS_TOTAL:90.00*
+
+|C195|33260155667788000199550000000010000000018|NFE COM IBS CBS|
+
+*==============================================================================*
+*NF-e COM IMPOSTO SELETIVO (IS)                                               *
+*Produtos prejudiciais à saúde ou meio ambiente                               *
+*Objetivo extrafiscal - desestimular consumo                                  *
+*==============================================================================*
+
+|C100|0|1|000002|55|00|1|11223344000155|66778899000122|CLIENTE PRODUTOS SELETIVOS|SP||000002|55|000000002|20012026|20012026|15000,00|0|15000,00|0|IBS_CBS_IS|60|0|0|0|0|15000,00|0|0|0|0|0|0|0|35260166778899000122550000000020000000028|
+|C110|000|3301|REFORMA|202602|VENDA COM IMPOSTO SELETIVO|
+
+*Bebida alcoólica - sujeita ao Imposto Seletivo*
+|C170|001|200001|BEBIDA ALCOOLICA PREMIUM|UN|100,00|50,00|0|5101|000|5000,00|0|0|0|0|0|
+*Campos IS (Imposto Seletivo):*
+*- Código NCM sujeito a IS: 22083000*
+*- Base de cálculo IS: 5000,00*
+*- Alíquota IS: 25,00% (exemplo)*
+*- Valor IS: 1250,00*
+*IS_NCM:22083000|IS_BC:5000.00|IS_ALIQ:25.00|IS_VALOR:1250.00*
+*IBS_BC:5000.00|IBS_ALIQ:0.10|IBS_VALOR:5.00*
+*CBS_BC:5000.00|CBS_ALIQ:0.90|CBS_VALOR:45.00*
+
+*Cigarros - sujeito ao Imposto Seletivo*
+|C170|002|200002|CIGARROS IMPORTADOS|MÇ|200,00|50,00|0|5101|000|10000,00|0|0|0|0|0|
+*Campos IS (Imposto Seletivo):*
+*- Código NCM sujeito a IS: 24022000*
+*- Base de cálculo IS: 10000,00*
+*- Alíquota IS: 50,00% (exemplo - alíquota maior)*
+*- Valor IS: 5000,00*
+*IS_NCM:24022000|IS_BC:10000.00|IS_ALIQ:50.00|IS_VALOR:5000.00*
+*IBS_BC:10000.00|IBS_ALIQ:0.10|IBS_VALOR:10.00*
+*CBS_BC:10000.00|CBS_ALIQ:0.90|CBS_VALOR:90.00*
+
+|C190|000|5101|0,00|0,00|0,00|0,00|0,00|0,00|
+*Totalizador IBS/CBS/IS por CST:*
+*IBS_TOTAL:15.00|CBS_TOTAL:135.00|IS_TOTAL:6250.00*
+
+|C195|35260166778899000122550000000020000000028|NFE COM IS IBS CBS|
+
+*==============================================================================*
+*NFC-e COM NOVOS TRIBUTOS (Nota Fiscal Consumidor Eletrônica)                *
+*==============================================================================*
+
+|C100|0|1|000003|65|00|1|11223344000155|||SP||000003|65|000000003|25012026|25012026|500,00|0|500,00|0|IBS_CBS|60|0|0|0|0|500,00|0|0|0|0|0|0|0|35260111223344000155650000000030000000038|
+|C170|001|100001|PRODUTO VAREJO COM IBS CBS|UN|5,00|100,00|0|5102|000|500,00|0|0|0|0|0|
+*Campos IBS/CBS para NFC-e:*
+*IBS_BC:500.00|IBS_ALIQ:0.10|IBS_VALOR:0.50*
+*CBS_BC:500.00|CBS_ALIQ:0.90|CBS_VALOR:4.50*
+
+|C190|000|5102|0,00|0,00|0,00|0,00|0,00|0,00|
+|C195|35260111223344000155650000000030000000038|NFCE IBS CBS|
+
+*==============================================================================*
+*CÓDIGOS CST ESPECÍFICOS PARA IBS E CBS                                      *
+*Novos códigos de situação tributária                                         *
+*==============================================================================*
+
+*Exemplos de CST para IBS (hipotéticos - aguardando definição oficial)*
+*CST_IBS_00: Tributada integralmente*
+*CST_IBS_20: Com redução de base de cálculo*
+*CST_IBS_30: Isenta ou não tributada*
+*CST_IBS_40: Não incidência*
+*CST_IBS_41: Não incidência - operação específica*
+
+*Exemplos de CST para CBS (hipotéticos - aguardando definição oficial)*
+*CST_CBS_01: Operação tributável com alíquota básica*
+*CST_CBS_02: Operação tributável com alíquota diferenciada*
+*CST_CBS_04: Operação tributável monofásica*
+*CST_CBS_06: Operação tributável - alíquota zero*
+*CST_CBS_07: Operação isenta da contribuição*
+*CST_CBS_08: Operação sem incidência da contribuição*
+*CST_CBS_09: Operação com suspensão da contribuição*
+
+*==============================================================================*
+*CÓDIGOS DE AJUSTE PARA IBS E CBS                                            *
+*Ajustes de apuração dos novos tributos                                       *
+*==============================================================================*
+
+*Registro de ajustes IBS (estrutura hipotética)*
+|E111|0,10|15,00|0|IBS_AJUSTE_001||0||||
+*IBS_AJUSTE_001: Ressarcimento IBS operação anterior*
+*IBS_AJUSTE_002: Estorno crédito indevido IBS*
+*IBS_AJUSTE_003: Crédito presumido IBS - setor específico*
+
+*Registro de ajustes CBS (estrutura hipotética)*
+|E111|0,90|135,00|0|CBS_AJUSTE_001||0||||
+*CBS_AJUSTE_001: Ressarcimento CBS operação anterior*
+*CBS_AJUSTE_002: Estorno débito CBS*
+*CBS_AJUSTE_003: Crédito presumido CBS - exportação*
+
+*==============================================================================*
+*TRANSIÇÃO TRIBUTÁRIA - PERÍODO 2026-2033                                    *
+*==============================================================================*
+
+*2026: Ano de testes*
+*- IBS: 0,1% (alíquota simbólica)*
+*- CBS: 0,9% (alíquota simbólica)*
+*- Dispensado recolhimento, mas obrigatório destaque nos documentos*
+
+*2027-2032: Período de transição gradual*
+*- Redução progressiva de ICMS, ISS, PIS, COFINS*
+*- Aumento progressivo de IBS e CBS*
+*- Coexistência dos tributos antigos e novos*
+
+*2033: Implementação completa*
+*- Extinção de ICMS, ISS, PIS, COFINS*
+*- IBS e CBS em vigor pleno*
+*- Alíquota padrão IBS+CBS estimada: 26,5%*
+
+*==============================================================================*
+*CNPJ - Cadastro Nacional de Pessoa Jurídica (14 dígitos)                    *
+*==============================================================================*
+|0150|11223344000155|98765432000111|FORNECEDOR REGIME ANTIGO|MG|9876543|3199999999|antigo@fornecedor.com.br|
+|0150|11223344000155|12345678000190|FORNECEDOR REGIME NOVO|SP|1234567|1188888888|novo@fornecedor.com.br|
+|0150|11223344000155|55443322000188|CLIENTE REGIME TRANSICAO|RJ|5544332|2199999999|transicao@cliente.com.br|
+
+*==============================================================================*
+*CPF - Cadastro de Pessoa Física (11 dígitos)                                *
+*A partir de julho/2026: pessoas físicas contribuintes devem ter CNPJ        *
+*==============================================================================*
+|0100|JOAO DA SILVA PF|12345678901|CRC123456SP|joao@exemplo.com|1199999999|
+|0100|MARIA OLIVEIRA PF|98765432109|CRC987654RJ|maria@exemplo.com|2188888888|
+|0100|PEDRO SANTOS PF|11122233344|CRC111222MG|pedro@exemplo.com|3177777777|
+
+*Registros de encerramento*
+|9900|0000|1|
+|9900|0001|1|
+|9900|0005|1|
+|9900|0100|3|
+|9900|0150|3|
+|9900|C100|3|
+|9900|C110|2|
+|9900|C170|6|
+|9900|C190|3|
+|9900|C195|3|
+|9900|E111|2|
+|9900|9900|15|
+|9900|9990|1|
+|9900|9999|1|
+|9990|001|
+|9999|28|
