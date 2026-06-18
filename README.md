@@ -34,9 +34,9 @@ Esta extensão fornece syntax highlighting para os seguintes elementos dos arqui
 
 ### Identificadores e Documentos
 
-- **CNPJ** - 14 dígitos (Cadastro Nacional de Pessoa Jurídica)
+- **CNPJ** - 14 posições, com suporte ao **novo formato alfanumérico** (12 posições alfanuméricas + 2 dígitos verificadores numéricos, vigência 01/07/2026 — IN RFB nº 2.229/2024). CNPJs numéricos antigos continuam reconhecidos.
 - **CPF** - 11 dígitos (Cadastro de Pessoa Física)
-- **Chaves de Nota Fiscal** - 44 dígitos
+- **Chaves de Nota Fiscal** - 44 posições, com suporte ao CNPJ embutido alfanumérico (NT NF-e 2026.004)
 
 ### Dados Numéricos e Datas
 

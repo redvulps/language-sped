@@ -2,6 +2,27 @@
 
 Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 
+## [0.4.0] - 2026-06-18
+
+### Added
+
+- **Suporte ao CNPJ Alfanumérico** (vigência a partir de 01/07/2026):
+  - CNPJ agora reconhecido no novo formato de 14 posições — 12 alfanuméricas (`0-9`, `A-Z` maiúsculas) + 2 dígitos verificadores numéricos
+  - Mantida compatibilidade total com CNPJs numéricos antigos (formato numérico é subconjunto do alfanumérico)
+  - Base legal: Instrução Normativa RFB nº 2.229/2024 e Nota Técnica Conjunta DF-e 2025.001
+- **Chave de acesso de NF-e/NFC-e alfanumérica** (Nota Técnica NF-e 2026.004):
+  - Chave de 44 posições agora aceita letras nas 12 posições do CNPJ do emitente (estrutura `[0-9]{6}[0-9A-Z]{12}[0-9]{26}`)
+- Arquivo de exemplo `example-cnpj-alfanumerico.txt` demonstrando CNPJ e chave alfanuméricos junto a CNPJ numérico antigo
+
+### Changed
+
+- Pattern de CNPJ alterado de `\d{14}` para `[0-9A-Z]{12}\d{2}`
+- Pattern de chave de NF-e alterado de `\d{44}` para `[0-9]{6}[0-9A-Z]{12}[0-9]{26}`
+
+### Mantido
+
+- CPF permanece com 11 dígitos numéricos (não é afetado pela mudança do CNPJ)
+
 ## [0.3.0] - 2026-02-04
 
 ### Added

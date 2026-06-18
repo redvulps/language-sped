@@ -17,8 +17,8 @@
 			"patterns": [
 				{
 					"name": "entity.name.type.cnpj.sped",
-					"match": "(?<=\\|)\\d{14}(?=\\|)",
-					"comment": "CNPJ - 14 dígitos (scope: entity.name para maior destaque)"
+					"match": "(?<=\\|)[0-9A-Z]{12}\\d{2}(?=\\|)",
+					"comment": "CNPJ - 14 posições (12 alfanuméricas + 2 DV numéricos, vigência 07/2026 - IN RFB 2.229/2024)"
 				},
 				{
 					"name": "variable.parameter.cpf.sped",
@@ -37,8 +37,8 @@
 				},
 				{
 					"name": "string.invoice-key.sped",
-					"match": "(?<=\\|)\\d{44}(?=\\|)",
-					"comment": "Chave de Nota Fiscal - 44 dígitos"
+					"match": "(?<=\\|)[0-9]{6}[0-9A-Z]{12}[0-9]{26}(?=\\|)",
+					"comment": "Chave de NF-e - 44 posições (CNPJ embutido alfanumérico, NT 2026.004)"
 				},
 				{
 					"name": "constant.character.cfop.in.sped",
